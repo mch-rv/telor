@@ -9,6 +9,12 @@
   <script src="https://cdn.jsdelivr.net/gh/peterhry/CircleType@2.3.1/dist/circletype.min.js"></script>
  </head>
  <body class="bg-pink">
+<div class="flex justify-center">
+  <audio controls autoplay allow="autoplay" loop id="audio">
+    <source src="best.mp3" type="audio/mpeg" /> 
+    Your browser does not support the audio element.
+   </audio>
+</div>
   <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
   <div class="typewriter mt-5 mr-5 ml-5">
    <h1 id="myElement" class="text-5xl justify-center flex text-center">HAPPY BIRTHDAY!!!</h1>
@@ -108,11 +114,6 @@
     </p>
 </div>
 
-
-  <audio controls  id="audio"autoplay style="display: none">
-   <source src="best.mp3" type="audio/mpeg" />
-   Your browser does not support the audio element.
-  </audio>
   <script>
     const circleType = new CircleType(document.getElementById('myElement'));
     const circleType1 = new CircleType(document.getElementById('myElement1'));
@@ -121,18 +122,19 @@
     circleType1.radius(400);
    let audio = document.getElementById("audio");
    audio.volume = 0.3;
+   audio.play();
+   document.querySelector("audio").play();
    window.onSpotifyIframeApiReady = (IFrameAPI) => {
     const element = document.getElementById("embed-iframe");
     const options = {
      width: "500px",
      height: "160",
-     uri: "spotify:playlist:4KI5bnPoWe41kb3DWitzqL:play",
+     uri: "spotify:playlist:4KI5bnPoWe41kb3DWitzqL",
     };
     const callback = (EmbedController) => {};
     IFrameAPI.createController(element, options, callback);
    };
    EmbedController.loadUri("spotify:playlist:4KI5bnPoWe41kb3DWitzqL");
-   EmbedController.play();
   </script>
  </body>
  <footer class="bg-dark pt-24 pb-12">
