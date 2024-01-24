@@ -2604,6 +2604,14 @@ video {
     -moz-columns: 4;
          columns: 4;
   }
+
+  .lg\:pl-52 {
+    padding-left: 13rem;
+  }
+
+  .lg\:pr-52 {
+    padding-right: 13rem;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
